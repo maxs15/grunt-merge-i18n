@@ -1,0 +1,18 @@
+{
+  "name": "grunt-merge-i18n",
+  "version": "0.0.0",
+  "description": "Merge your json i18n files",
+  "main": "tasks/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Merge",
+    "locale",
+    "json",
+    "i18n",
+    "language"
+  ],
+  "author": "Maxime Mezrahi",
+  "license": "MIT"
+}
