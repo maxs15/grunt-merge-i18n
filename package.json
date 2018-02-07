@@ -1,6 +1,6 @@
 {
   "name": "grunt-merge-i18n",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Merge your json i18n files",
   "main": "tasks/index.js",
   "scripts": {
