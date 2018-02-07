@@ -10,7 +10,14 @@ module.exports = function (grunt) {
 
         var getLanguage = function(filename) {
             var name = path.basename(filename, '.json');
-            var sep = name.lastIndexOf(options.separator);
+            var sep;
+
+            // bypass separate lang name if the value is false
+            if (!options.separator) {
+              return name;
+            }
+
+            sep = name.lastIndexOf(options.separator);
 
             if (sep != -1) {
                 name = name.substring(sep + 1);
@@ -39,10 +46,10 @@ module.exports = function (grunt) {
                     throw "JSON source file " + src + " not found";
                 else {
                     var json;
-                    try { 
-                        json = grunt.file.readJSON(src); 
+                    try {
+                        json = grunt.file.readJSON(src);
                     }
-                    catch (e) { 
+                    catch (e) {
                         throw "Unbale to read " + src;
                     }
                     var lang = getLanguage(src);
@@ -66,7 +73,7 @@ module.exports = function (grunt) {
         };
 
         this.files.forEach(function (f) {
-            try { 
+            try {
                 analyseFiles(f.src, f.dest);
             } catch(e) {
                 grunt.fail.warn(e);
